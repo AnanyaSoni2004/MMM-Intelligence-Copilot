@@ -1,0 +1,52 @@
+Data Quality Guide for MMM — Aryma Singularity
+
+Overview
+Data quality is the single biggest driver of MMM accuracy. A well-specified model on poor data will always underperform a simpler model on clean data. This guide covers the most common data quality issues encountered in production MMM workflows.
+
+1. Common Data Anomalies
+
+1.1 Missing Channel Data
+Symptom: A channel shows $0 spend or null values for one or more periods.
+Impact: High. Missing channel data causes the model to attribute its revenue to other channels (inflating their apparent ROI) or to the baseline.
+Detection: Compare actual spend to media plan. Flag any period where actual = 0 but plan > 0.
+Resolution: Re-pull from ad platform API. Check for API authentication failures, rate limiting, or reporting delays.
+
+1.2 Spend Spikes
+Symptom: A channel shows spend 3x+ above its trailing 4-week average.
+Impact: Medium-High. May be legitimate (seasonal campaign) or a data error (duplicate rows, currency conversion error).
+Detection: Z-score > 2.5 on rolling 4-week window.
+Resolution: Verify against insertion orders. Check for duplicate transaction records in the source system.
+
+1.3 Data Drift
+Symptom: Channel-level spend distribution shifts significantly compared to historical patterns.
+Impact: Medium. Can indicate a change in reporting methodology, a new attribution window setting, or a genuine business change.
+Detection: KL divergence or PSI (Population Stability Index) > 0.2 between current and prior 12-week distribution.
+Resolution: Investigate with the media buying team. Document any intentional changes to reporting settings.
+
+1.4 Implausible Values
+Symptom: Revenue or spend values that are negative, extremely large, or in the wrong currency.
+Impact: Critical. Negative spend or revenue values will break model estimation.
+Detection: Any value < 0 for spend/revenue. Any value > 10x the historical maximum.
+Resolution: Check for currency conversion errors (e.g., spend reported in local currency but expected in USD). Check for sign errors in financial data systems.
+
+1.5 Time Alignment Issues
+Symptom: Spend data and revenue data are on different reporting calendars (e.g., spend on calendar week, revenue on fiscal week).
+Impact: High. Misaligned time series creates spurious correlations and incorrect attribution.
+Detection: Check if time series start/end on the same date and have the same number of rows.
+Resolution: Realign to a common calendar. Document the alignment method used.
+
+2. Data Quality Scoring
+Aryma Singularity scores each dataset on a 0-100 scale before model runs:
+- 90-100: Clean. Safe to run model.
+- 70-89: Minor issues. Review flagged anomalies but model can proceed with caveats.
+- 50-69: Significant issues. Require data team review before proceeding.
+- Below 50: Do not run model. Data issues are likely to produce corrupted attribution.
+
+3. Pre-Run Checklist
+Before any MMM model run:
+□ All expected channels have non-zero spend for all active periods
+□ No spend or revenue values are negative
+□ Time series are aligned to the same calendar
+□ Spend totals reconcile to finance/media plan within 5%
+□ No single period shows spend > 3x trailing average without explanation
+□ Data freshness: all feeds updated within 48 hours of run

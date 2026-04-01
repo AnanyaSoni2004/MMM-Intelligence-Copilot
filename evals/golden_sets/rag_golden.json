@@ -1,0 +1,44 @@
+[
+  {
+    "id": "rag_001",
+    "query": "What is adstock and how does it work in MMM?",
+    "expected_intent": "research",
+    "expected_in_response": ["adstock", "carry-over", "decay"],
+    "must_cite": true
+  },
+  {
+    "id": "rag_002",
+    "query": "What is the typical ROI for email marketing?",
+    "expected_intent": "research",
+    "expected_in_response": ["email", "roi"],
+    "must_cite": true
+  },
+  {
+    "id": "rag_003",
+    "query": "What data quality score is required before running an MMM model?",
+    "expected_intent": "research",
+    "expected_in_response": ["90", "score"],
+    "must_cite": true
+  },
+  {
+    "id": "rag_004",
+    "query": "What happened in the CPG brand case study?",
+    "expected_intent": "research",
+    "expected_in_response": ["facebook", "saturation"],
+    "must_cite": true
+  },
+  {
+    "id": "rag_005",
+    "query": "How many weeks of data are needed for a reliable MMM run?",
+    "expected_intent": "research",
+    "expected_in_response": ["104", "52", "weeks"],
+    "must_cite": true
+  },
+  {
+    "id": "rag_006",
+    "query": "What is the capital of France?",
+    "expected_intent": "research",
+    "expected_in_response": ["cannot find", "not available"],
+    "must_refuse_out_of_domain": true
+  }
+]

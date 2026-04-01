@@ -1,0 +1,51 @@
+Channel Performance Benchmarks — Aryma Labs Research
+
+Industry Benchmark ROI by Channel (2023-2024 averages across client portfolio):
+
+1. Email Marketing
+Average ROI: 7.5x - 10.2x
+Why high: Low production cost, high intent audience (opted-in users)
+Saturation: Typically reached at $30K-$50K/month. Beyond this, unsubscribe rates increase and incremental revenue flattens.
+Best practice: Segment by purchase history and lifecycle stage. Automated flows (welcome, abandoned cart) consistently outperform batch sends.
+
+2. Paid Search (Google, Bing)
+Average ROI: 3.8x - 5.1x
+Why high: High purchase intent at moment of search. Brand terms outperform non-brand.
+Saturation: $150K-$280K/month for most mid-market brands. Search volume is finite — spend beyond available search volume yields zero marginal return.
+Best practice: Bid on branded terms aggressively (competitors do). Non-brand campaigns require tight negative keyword management.
+
+3. Paid Social (Facebook/Instagram)
+Average ROI: 2.2x - 3.5x
+Adstock half-life: 7-14 days (creative fatigue is a key driver)
+Saturation: $200K-$350K/month. Audience saturation is the primary constraint.
+Best practice: Rotate creatives every 2-3 weeks. Prospecting audiences require higher spend but build long-term incrementality.
+
+4. YouTube / Online Video
+Average ROI: 1.8x - 2.8x
+Adstock half-life: 14-21 days (longer brand recall vs. direct response)
+Saturation: $100K-$200K/month
+Best practice: 15-second non-skippable ads for brand awareness, 6-second bumpers for frequency. Skippable TrueView for lower-funnel.
+
+5. Linear TV
+Average ROI: 1.5x - 2.2x
+Adstock half-life: 14-28 days
+Saturation: Broad reach medium, saturation is less of a concern at typical brand budgets
+Best practice: Daypart selection matters significantly. Prime time vs. daytime can show 2x difference in ROI. GRPs, not just spend, determine impact.
+
+6. Display / Programmatic
+Average ROI: 1.1x - 1.8x
+Lowest ROI in the mix, but plays an important role in retargeting
+Saturation: Often reached quickly. Most value extracted in first $60K-$100K/month
+Best practice: Use primarily for retargeting warm audiences. Prospecting display consistently underperforms other channels.
+
+7. Influencer / Creator Marketing
+Average ROI: 2.5x - 4.0x (high variance — dependent on influencer quality and category fit)
+Adstock half-life: 21-30 days (content lives on social feeds longer than paid ads)
+Saturation: Difficult to define — scales with number of creators rather than spend per creator
+Best practice: Micro-influencers (10K-100K followers) consistently show higher engagement rates and better ROI than macro-influencers for most DTC brands.
+
+8. Radio / Audio
+Average ROI: 1.3x - 2.0x
+Primarily relevant for local brands or commuter demographics
+Saturation: Highly local-market dependent
+Best practice: Morning and evening drive times (6-9am, 4-7pm) significantly outperform other dayparts.

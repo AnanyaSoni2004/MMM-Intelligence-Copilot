@@ -1,0 +1,37 @@
+[
+  {
+    "id": "forecast_001",
+    "query": "If I have a $2 million budget, how should I allocate it across channels?",
+    "expected_intent": "forecast",
+    "expected_fields": ["scenarios", "recommended_allocation", "projected_total_revenue"],
+    "must_include_ci": true
+  },
+  {
+    "id": "forecast_002",
+    "query": "What revenue uplift can I expect if I increase budget to $1.5M?",
+    "expected_intent": "forecast",
+    "expected_fields": ["projected_uplift_pct", "projected_total_revenue", "baseline_revenue"],
+    "must_include_ci": true
+  },
+  {
+    "id": "forecast_003",
+    "query": "What happens to ROI if I double my Facebook spend to $500K?",
+    "expected_intent": "forecast",
+    "expected_fields": ["scenarios", "projected_total_revenue"],
+    "must_include_ci": true
+  },
+  {
+    "id": "forecast_004",
+    "query": "Which channels are currently over-saturated in a $3M budget scenario?",
+    "expected_intent": "forecast",
+    "expected_fields": ["scenarios"],
+    "must_include_ci": false
+  },
+  {
+    "id": "forecast_005",
+    "query": "Generate a budget allocation plan for $800K prioritizing digital channels",
+    "expected_intent": "forecast",
+    "expected_fields": ["recommended_allocation", "scenarios"],
+    "must_include_ci": true
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "analyst_001",
+    "query": "What was Facebook's ROI in Q3 2024?",
+    "expected_intent": "attribution",
+    "expected_fields": ["channels", "overall_roi", "sources"],
+    "must_not_fabricate": true,
+    "min_channels": 1
+  },
+  {
+    "id": "analyst_002",
+    "query": "Which channel had the highest ROI in Q1 2024?",
+    "expected_intent": "attribution",
+    "expected_fields": ["channels", "overall_roi"],
+    "must_not_fabricate": true,
+    "min_channels": 1
+  },
+  {
+    "id": "analyst_003",
+    "query": "What was the total marketing spend and revenue in Q2 2024?",
+    "expected_intent": "attribution",
+    "expected_fields": ["total_spend", "total_attributed_revenue", "overall_roi"],
+    "must_not_fabricate": true,
+    "min_channels": 1
+  },
+  {
+    "id": "analyst_004",
+    "query": "Compare Google Search and Facebook ROI for Q4 2024",
+    "expected_intent": "attribution",
+    "expected_fields": ["channels"],
+    "must_not_fabricate": true,
+    "min_channels": 2
+  },
+  {
+    "id": "analyst_005",
+    "query": "What percentage of revenue did email contribute in Q1 2025?",
+    "expected_intent": "attribution",
+    "expected_fields": ["channels"],
+    "must_not_fabricate": true,
+    "min_channels": 1
+  }
+]

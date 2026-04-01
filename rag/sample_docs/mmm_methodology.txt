@@ -1,0 +1,45 @@
+MMM Methodology Guide — Aryma Labs Internal
+
+1. What is Marketing Mix Modeling?
+Marketing Mix Modeling (MMM) is a statistical technique used to estimate the impact of various marketing inputs on sales or revenue. It uses historical data to decompose observed sales into contributions from each marketing channel, baseline (non-marketing) effects, and external factors like seasonality and price.
+
+2. Model Architecture
+Aryma Synapse uses a Bayesian hierarchical model with the following components:
+- Adstock transformation: Captures the carry-over effect of advertising over time. Each channel has its own decay rate (half-life) parameter.
+- Saturation curves: Models diminishing returns using a Hill function. As spend increases, incremental returns decrease.
+- Seasonality decomposition: Fourier series terms capture weekly, monthly, and annual seasonality patterns.
+- Price elasticity: Included as an external regressor where applicable.
+
+3. Attribution Methodology
+Revenue is decomposed as:
+  Total Revenue = Baseline + Sum(Channel Contributions) + Seasonality + Trend
+
+Channel contribution = spend_t * adstock_coefficient * saturation_function(spend_t)
+
+4. Confidence Intervals
+All MMM outputs include 90% credible intervals derived from the posterior distribution of model parameters. Wider intervals indicate higher uncertainty, typically seen with:
+- Channels with low spend or high variance
+- Short time series (< 52 weeks recommended)
+- High multicollinearity between channels
+
+5. Diminishing Returns
+Each channel has a saturation threshold — the spend level beyond which incremental ROI drops below 1.0x. Spending beyond this threshold is not recommended without a strategic justification.
+Typical thresholds by channel type:
+- Paid social (Facebook, Instagram): $200K-$350K/month
+- Paid search: $150K-$250K/month
+- TV: $350K-$600K/month
+- Email: $25K-$50K/month (high ROI, low saturation)
+
+6. Model Quality Metrics
+- MAPE (Mean Absolute Percentage Error): Target < 10%
+- R-squared: Target > 0.90
+- NRMSE: Normalized RMSE, target < 0.15
+- Decomposition check: Channel contributions must sum to observed revenue
+
+7. Data Requirements
+Minimum requirements for a reliable MMM run:
+- At least 104 weeks (2 years) of weekly data
+- Spend data for all active channels
+- Sales/revenue data at matching granularity
+- Price data if significant promotions occurred
+- External factors: holidays, competitor activity (where available)

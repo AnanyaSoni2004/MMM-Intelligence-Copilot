@@ -1,0 +1,23 @@
+[
+  {
+    "id": "anomaly_001",
+    "query": "Check my marketing data feed for anomalies before the model run",
+    "expected_intent": "anomaly",
+    "expected_fields": ["anomalies_found", "safe_to_run_model", "total_anomalies"],
+    "expect_anomalies": true
+  },
+  {
+    "id": "anomaly_002",
+    "query": "Are there any data quality issues in the current feed?",
+    "expected_intent": "anomaly",
+    "expected_fields": ["anomalies_found", "critical_count"],
+    "expect_anomalies": true
+  },
+  {
+    "id": "anomaly_003",
+    "query": "Is the data clean enough to run the MMM model?",
+    "expected_intent": "anomaly",
+    "expected_fields": ["safe_to_run_model"],
+    "expect_anomalies": true
+  }
+]

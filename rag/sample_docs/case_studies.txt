@@ -1,0 +1,33 @@
+Aryma Labs Case Studies — MMM Implementation
+
+Case Study 1: E-commerce Retailer — Budget Reallocation
+Client: Mid-market DTC apparel brand ($15M annual marketing budget)
+Challenge: Client was spending 45% of budget on TV with declining ROI. Digital channels were underfunded.
+Approach: Ran 18-month MMM using Synapse. Identified TV ROI had fallen from 2.8x to 1.6x over 12 months due to cord-cutting audience decline.
+Recommendation: Reallocate 20% of TV budget to Paid Social and YouTube.
+Result: After 6-month reallocation, total marketing ROI improved from 2.1x to 2.9x. Revenue grew 14% with the same total budget.
+Key insight: TV's declining ROI was masked by overall revenue growth. MMM isolated the channel-specific trend that blended metrics couldn't show.
+
+Case Study 2: CPG Brand — Diminishing Returns Identification
+Client: National CPG brand ($40M annual marketing budget)
+Challenge: Facebook spend had grown 3x over 18 months but sales growth had not kept pace.
+Approach: Synapse MMM identified saturation threshold for Facebook at $280K/month. Client was spending $520K/month.
+Recommendation: Cap Facebook at $280K/month and redirect excess to Email and Influencer (both below their saturation thresholds).
+Result: Same total spend, 22% improvement in total attributed revenue. Facebook ROI improved from 1.4x to 2.6x after scaling back.
+Key insight: More spend on a saturated channel is often worse than less spend. The MMM saturation curves made this quantifiable.
+
+Case Study 3: B2B SaaS — Paid Search Attribution
+Client: B2B SaaS company (long sales cycle, $8M marketing budget)
+Challenge: Long B2B sales cycles (90-180 days) made last-touch attribution misleading. Sales team was crediting almost all revenue to direct/organic.
+Approach: Synapse MMM uses revenue timing adjustments for long sales cycles. Modeled paid search impressions against pipeline creation (not closed revenue) with a 120-day lag.
+Recommendation: Paid search ROI was 3.2x when properly lagged — significantly higher than last-touch showed (0.8x).
+Result: Client increased paid search budget by $1.2M. Pipeline velocity improved and the company achieved their highest revenue quarter.
+Key insight: Attribution model choice has enormous consequence in B2B. Time-lagged MMM was the only methodology that captured the true paid search impact.
+
+Case Study 4: Retail Chain — Anomaly Detection
+Client: Regional retail chain (50 stores, $20M marketing budget)
+Challenge: During a major MMM run, Singularity flagged an anomaly — radio spend for Q3 was reported as $0 across all markets, despite the media plan showing active buys.
+Approach: Anomaly Detection Agent identified the issue as a data ingestion failure from the radio buying platform. The model was about to run without 12% of total spend data.
+Action: Model run was halted. Data team corrected the ingestion pipeline. Model ran correctly 48 hours later.
+Result: Prevented a corrupted model run that would have generated incorrect attribution for all channels (not just radio) and potentially led to budget cuts to healthy channels.
+Key insight: Data quality issues in one channel can corrupt attribution for all channels. Automated anomaly detection before model runs is critical.

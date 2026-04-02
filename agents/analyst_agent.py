@@ -10,8 +10,6 @@ from groq import Groq
 from mock_apis.synapse_api import get_attribution
 from guardrails.hallucination_guard import run_hallucination_guard
 
-client = Groq()
-
 SYSTEM_PROMPT = """You are the MMM Analyst Agent, a specialist in Marketing Mix Modeling attribution analysis.
 
 You have access to Aryma Synapse MMM model outputs. Your job is to answer attribution questions accurately.
@@ -40,6 +38,7 @@ Format your response as JSON matching this structure:
 
 def run(query: str, time_period: str = "Q3_2024", channels: list[str] = None) -> dict:
     """Run the MMM Analyst Agent."""
+    client = Groq()
     # Fetch ground-truth data from Synapse
     model_data = get_attribution(time_period, channels)
 

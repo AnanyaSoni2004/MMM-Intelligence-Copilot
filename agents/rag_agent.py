@@ -9,8 +9,6 @@ import re
 from groq import Groq
 from mock_apis.nebula_api import search
 
-client = Groq()
-
 SYSTEM_PROMPT = """You are the RAG Insight Agent, an expert in MMM methodology, channel benchmarks, and marketing analytics research.
 
 You answer questions using ONLY the provided retrieved context. You never make claims beyond what the documents say.
@@ -34,6 +32,7 @@ Format your response as JSON:
 
 def run(query: str, top_k: int = 5) -> dict:
     """Run the RAG Insight Agent."""
+    client = Groq()
     chunks = search(query, top_k=top_k)
 
     if not chunks:

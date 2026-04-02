@@ -10,8 +10,6 @@ import uuid
 import numpy as np
 from groq import Groq
 
-client = Groq()
-
 SYSTEM_PROMPT = """You are the MMM Anomaly Detection Agent. You analyze marketing data feeds for quality issues before they corrupt a model run.
 
 You detect:
@@ -82,6 +80,7 @@ def _compute_stats(data: list[dict]) -> dict:
 
 def run(query: str, data: list[dict] = None) -> dict:
     """Run the Anomaly Detection Agent."""
+    client = Groq()
     if data is None:
         # Generate sample data with anomalies for demo
         import random

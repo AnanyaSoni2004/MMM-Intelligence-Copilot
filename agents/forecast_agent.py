@@ -10,8 +10,6 @@ from groq import Groq
 from mock_apis.synapse_api import get_forecast
 from guardrails.hallucination_guard import run_hallucination_guard
 
-client = Groq()
-
 SYSTEM_PROMPT = """You are the MMM Forecast Agent, specializing in marketing budget allocation and scenario planning.
 
 You use Aryma Synapse's diminishing returns curves to generate revenue forecasts.
@@ -56,6 +54,7 @@ def _extract_budget(query: str) -> float:
 
 def run(query: str, channels: list[str] = None) -> dict:
     """Run the Forecast Agent."""
+    client = Groq()
     budget = _extract_budget(query)
     model_data = get_forecast(budget, channels)
 
